@@ -1,0 +1,16 @@
+<table class="table">
+    <tr>
+        <th>Título</th>
+        <th>Imagen</th>
+        <th>Contenido</th>
+        <th>Creación</th>
+    </tr>
+    <% @posts.each do |post| %>
+        <tr>
+            <td><%= post.title %></td>
+            <td><%= image_tag post.image_url, width: "100", class: "img-thumbnail" %></td>
+            <td><%= post.content %></td>
+            <td><%= post.created_at %></td>
+        </tr>
+    <% end %>
+</table>

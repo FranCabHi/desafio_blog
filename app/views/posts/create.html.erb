@@ -1,0 +1,13 @@
+<% if @post.errors.any? %>
+    <div id="error_explanation">
+    <h3>El formulario contiene <%= pluralize(@post.errors.count, "error") %> y no se pudo guardar el artículo:</h3>
+        <ul>
+            <% @post.errors.full_messages.each do |msg| %>
+                <li><%= msg %></li>
+            <% end %>
+        </ul>
+    </div>
+<% else %>
+    <h1>Se publicó el artículo correctamente</h1>
+    <p>Revísalo en la <a href="<%= posts_path %>">página principal</a></p>
+<% end %>
